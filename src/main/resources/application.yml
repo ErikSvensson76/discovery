@@ -5,7 +5,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include:
+          - health
+          - gateway
+          - info
   health:
     readinessState:
       enabled: true
@@ -15,6 +18,7 @@ management:
     health:
       probes:
         enabled: true
+
 server:
   port: 8070
 
